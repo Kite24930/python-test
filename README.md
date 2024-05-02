@@ -7,6 +7,33 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## About Python Test
+
+This is a simple project to test the integration between Laravel and Python. The project is a simple API that receives a string and returns the string reversed.
+
+## Installation
+1. Clone the repository
+2. Copy the `.env.example` file to `.env` and configure the database connection
+3. Run `composer install`
+4. Run `sail up -d` to start the docker containers
+4. Run `docker exec -it --user root {Docker Container ID} bash` to enter the container
+5. Run `apt-get update` to update the package list
+6. Run `apt-get install -y build-essential libssl-dev zlib1g-dev \
+   libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+   libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev \
+   liblzma-dev libpq-dev` to install the necessary dependencies
+7. Exit the container
+8. Run `sail shell` to enter the container
+9. Run `git clone https://github.com/yyuu/pyenv.git ~/.pyenv` to clone the pyenv repository
+10. Run `echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc` to add the pyenv to the bashrc file
+11. Run `echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc` to add the pyenv to the bashrc file
+12. Run `echo 'eval "$(pyenv init --path)"' >> ~/.bashrc` to add the pyenv to the bashrc file
+13. Run `source ~/.bashrc` to reload the bashrc file
+14. Run `pyenv install {Python Version}` to install the python version
+15. Run `pyenv global {Python Version}` to set the python version as the global version
+    1. Check the installed versions with `python3 --version`
+16. Run `python3 -m pip install {package name}` to install the necessary packages
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
